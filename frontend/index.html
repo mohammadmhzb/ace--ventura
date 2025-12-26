@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Ace Ventura – Recommendation Detective</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>🕵️ Ace Ventura</h1>
+        <p class="subtitle">Linear Algebra Based Recommendation System</p>
+
+        <div class="card">
+            <h2>User Preferences</h2>
+
+            <label>
+                Action
+                <input type="range" id="action" min="0" max="1" step="1" value="0">
+            </label>
+
+            <label>
+                Comedy
+                <input type="range" id="comedy" min="0" max="1" step="1" value="0">
+            </label>
+
+            <label>
+                Drama
+                <input type="range" id="drama" min="0" max="1" step="1" value="0">
+            </label>
+
+            <label>
+                Sci-Fi
+                <input type="range" id="scifi" min="0" max="1" step="1" value="0">
+            </label>
+
+            <button onclick="analyze()">Analyze with Ace Ventura</button>
+        </div>
+
+        <div class="card hidden" id="resultCard">
+            <h2>🔍 Recommendations</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Movie</th>
+                        <th>Similarity Score</th>
+                    </tr>
+                </thead>
+                <tbody id="resultTable"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
