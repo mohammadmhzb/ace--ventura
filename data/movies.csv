@@ -1,6 +1,19 @@
-title,action,comedy,drama,scifi
-Matrix,1,0,0,1
-Avengers,1,1,0,1
-Joker,0,0,1,0
-Hangover,0,1,0,0
-Interstellar,0,0,1,1
+title,action,comedy,drama,scifi,romance,thriller,fantasy,mystery
+Matrix,5,1,1,5,1,4,1,4
+Avengers Endgame,5,3,2,4,1,3,3,1
+Joker,1,1,5,1,1,4,1,4
+Hangover,1,5,1,1,2,1,1,1
+Interstellar,1,1,5,5,4,1,4,1
+Inception,4,1,4,5,1,5,1,4
+The Dark Knight,5,1,4,1,1,5,1,4
+Forrest Gump,1,3,5,1,5,1,1,1
+Titanic,1,2,5,1,5,1,1,1
+Pulp Fiction,3,4,5,1,1,4,1,3
+The Wolf of Wall Street,2,5,4,1,2,3,1,1
+Gladiator,5,1,4,1,2,3,2,1
+Iron Man,5,3,2,4,1,2,3,1
+Shutter Island,2,1,5,1,1,5,1,5
+Doctor Strange,4,2,2,5,1,3,5,2
+Harry Potter,2,3,3,1,2,2,5,4
+Se7en,1,1,4,1,1,5,1,5
+The Lord of the Rings,4,1,4,1,2,3,5,4

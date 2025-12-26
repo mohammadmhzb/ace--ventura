@@ -1,32 +1,44 @@
+const sliders = ["action", "comedy", "drama", "scifi"];
+const resultTable = document.getElementById("resultTable");
+const resultCard = document.getElementById("resultCard");
+
+// live update numbers
+sliders.forEach(id => {
+  const input = document.getElementById(id);
+  const val = document.getElementById(id + "Val");
+  input.oninput = () => val.textContent = input.value;
+});
+
 async function analyze() {
-    const data = {
-        action: Number(document.getElementById("action").value),
-        comedy: Number(document.getElementById("comedy").value),
-        drama: Number(document.getElementById("drama").value),
-        scifi: Number(document.getElementById("scifi").value),
-    };
+  const payload = {
+  action: +action.value,
+  comedy: +comedy.value,
+  drama: +drama.value,
+  scifi: +scifi.value,
+  romance: +romance.value,
+  thriller: +thriller.value,
+  fantasy: +fantasy.value,
+  mystery: +mystery.value
+};
 
-    const response = await fetch("http://127.0.0.1:8000/recommend", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-    });
+  const res = await fetch("http://127.0.0.1:8000/recommend", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  });
 
-    const result = await response.json();
+  const data = await res.json();
+  resultTable.innerHTML = "";
 
-    const table = document.getElementById("resultTable");
-    table.innerHTML = "";
+  data.recommendations.forEach(item => {
+    resultTable.innerHTML += `
+      <tr>
+        <td>${item.title}</td>
+        <td>${item.score.toFixed(3)}</td>
+        <td>${item.angle}°</td>
+      </tr>
+    `;
+  });
 
-    result.recommendations.forEach(item => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-            <td>${item.title}</td>
-            <td>${item.score}</td>
-        `;
-        table.appendChild(row);
-    });
-
-    document.getElementById("resultCard").classList.remove("hidden");
+  resultCard.classList.remove("hidden");
 }

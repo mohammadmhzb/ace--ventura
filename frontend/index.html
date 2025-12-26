@@ -1,59 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <title>Ace Ventura – Recommendation Detective</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <title>Ace Ventura – Recommendation Detective</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-    <div class="container">
-        <h1>🕵️ Ace Ventura</h1>
-        <p class="subtitle">Linear Algebra Based Recommendation System</p>
+  <div class="container">
+    <header>
+      <h1>🕵️ Ace Ventura</h1>
+      <p class="subtitle">Linear Algebra Based Recommendation System</p>
+    </header>
 
-        <div class="card">
-            <h2>User Preferences</h2>
+    <section class="card">
+      <h2>User Preference Vector</h2>
 
-            <label>
-                Action
-                <input type="range" id="action" min="0" max="1" step="1" value="0">
-            </label>
+      <!-- Action -->
+      <div class="slider">
+        <span>Action</span>
+        <input type="range" id="action" min="1" max="5" value="3">
+        <span class="value" id="actionVal">3</span>
+      </div>
 
-            <label>
-                Comedy
-                <input type="range" id="comedy" min="0" max="1" step="1" value="0">
-            </label>
+      <!-- Comedy -->
+      <div class="slider">
+        <span>Comedy</span>
+        <input type="range" id="comedy" min="1" max="5" value="2">
+        <span class="value" id="comedyVal">2</span>
+      </div>
 
-            <label>
-                Drama
-                <input type="range" id="drama" min="0" max="1" step="1" value="0">
-            </label>
+      <!-- Drama -->
+      <div class="slider">
+        <span>Drama</span>
+        <input type="range" id="drama" min="1" max="5" value="3">
+        <span class="value" id="dramaVal">3</span>
+      </div>
 
-            <label>
-                Sci-Fi
-                <input type="range" id="scifi" min="0" max="1" step="1" value="0">
-            </label>
+      <!-- Sci-Fi -->
+      <div class="slider">
+        <span>Sci-Fi</span>
+        <input type="range" id="scifi" min="1" max="5" value="4">
+        <span class="value" id="scifiVal">4</span>
+      </div>
 
-            <button onclick="analyze()">Analyze with Ace Ventura</button>
-        </div>
+      <!-- Romance -->
+      <div class="slider">
+        <span>Romance</span>
+        <input type="range" id="romance" min="1" max="5" value="2">
+        <span class="value" id="romanceVal">2</span>
+      </div>
 
-        <div class="card hidden" id="resultCard">
-            <h2>🔍 Recommendations</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Movie</th>
-                        <th>Similarity Score</th>
-                    </tr>
-                </thead>
-                <tbody id="resultTable"></tbody>
-            </table>
-        </div>
-    </div>
+      <!-- Thriller -->
+      <div class="slider">
+        <span>Thriller</span>
+        <input type="range" id="thriller" min="1" max="5" value="3">
+        <span class="value" id="thrillerVal">3</span>
+      </div>
 
-    <script src="script.js"></script>
+      <!-- Fantasy -->
+      <div class="slider">
+        <span>Fantasy</span>
+        <input type="range" id="fantasy" min="1" max="5" value="2">
+        <span class="value" id="fantasyVal">2</span>
+      </div>
+
+      <!-- Mystery -->
+      <div class="slider">
+        <span>Mystery</span>
+        <input type="range" id="mystery" min="1" max="5" value="3">
+        <span class="value" id="mysteryVal">3</span>
+      </div>
+
+      <button onclick="analyze()">🔍 Analyze Preferences</button>
+    </section>
+
+    <section class="card hidden" id="resultCard">
+      <h2>Recommendations</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Movie</th>
+            <th>Similarity</th>
+            <th>Angle</th>
+          </tr>
+        </thead>
+        <tbody id="resultTable"></tbody>
+      </table>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
 </body>
-
 </html>

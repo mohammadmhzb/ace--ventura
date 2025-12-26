@@ -26,8 +26,13 @@ def get_recommendations(user: UserPreference):
         user.scifi
     ]
 
-    results = recommend(user_vector, movies)
     return {
         "user_vector": user_vector,
-        "recommendations": results
+        "education_mode": user.education_mode,
+        "recommendations": recommend(
+            user_vector,
+            movies,
+            education_mode=user.education_mode
+        )
     }
+
