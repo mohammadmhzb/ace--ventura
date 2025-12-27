@@ -1,4 +1,4 @@
-const sliders = ["action", "comedy", "drama", "scifi"];
+const sliders = ["action", "comedy", "drama", "scifi", "romance", "thriller", "fantasy", "mystery"];
 const resultTable = document.getElementById("resultTable");
 const resultCard = document.getElementById("resultCard");
 

@@ -23,7 +23,11 @@ def get_recommendations(user: UserPreference):
         user.action,
         user.comedy,
         user.drama,
-        user.scifi
+        user.scifi,
+        user.romance,
+        user.thriller,
+        user.fantasy,
+        user.mystery
     ]
 
     return {
@@ -36,3 +40,11 @@ def get_recommendations(user: UserPreference):
         )
     }
 
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(
+        "main:app",
+        host="127.0.0.1",
+        port=8000,
+        reload=False
+    )
