@@ -16,4 +16,4 @@ def recommend(user_vector: List[float], movies: List[Movie], education_mode=Fals
         })
 
     results.sort(key=lambda x: x["score"], reverse=True)
-    return results[:3]
+    return results[:5]
